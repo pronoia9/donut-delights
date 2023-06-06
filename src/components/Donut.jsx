@@ -46,11 +46,11 @@ export default function Donut({ index, pZ, speed, rng }) {
       <Detailed ref={ref} distances={[0, 65, 80]}>
         <group scale={2}>
           {obj ? (
-            <mesh geometry={obj.geometry} material={obj.material} />
+            <mesh key={index} geometry={obj.geometry} material={obj.material} />
           ) : (
             <>
-              {group.children.map((c) => (
-                <mesh geometry={c.geometry} material={c.material} />
+              {group.children.map((c, i) => (
+                <mesh key={`${index}-${i}`} geometry={c.geometry} material={c.material} />
               ))}
             </>
           )}

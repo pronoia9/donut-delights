@@ -9,7 +9,8 @@ export default function Donut({ index, pZ, speed }) {
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -pZ]);
   const { nodes, materials } = useGLTF('/donuts.glb'); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
   // By the time we're here the model is loaded, this is possible through React suspense
-  const filtered = Object.values(nodes).filter((n) => n.isMesh);
+  const groups = Object.values(nodes).filter((n) => n?.isGroup && n.name !== 'Scene');
+  const rng = Math.floor(Math.random() * groups.length);
 
   // Local component state, it is safe to mutate because it's fixed data
   const [data] = useState({
@@ -40,18 +41,14 @@ export default function Donut({ index, pZ, speed }) {
   // Using drei's detailed is a nice trick to reduce the vertex count because
   // Don't need high resolution for objects in the distance. The model contains 3 decimated meshes
   return (
-    <>
-      <DetailedDonut r={ref} geometry={filtered[Math.floor(Math.random() * filtered.length)].geometry} material={materials.Donut} />
-    </>
-  );
-}
-
-function DetailedDonut({ r, geometry, material }) {
-  return (
-    <Detailed ref={r} distances={[0, 65, 80]}>
-      <mesh scale={4} geometry={geometry} material={material} />
-      <mesh scale={4} geometry={geometry} material={material} />
-      <mesh scale={4} geometry={geometry} material={material} />
+    <Detailed ref={ref} distances={[0, 65, 80]}>
+      <group scale={0.5}>
+        {groups[rng].children.map((c) => (
+          <mesh scale={4} geometry={c.geometry} material={c.material} />
+        ))}
+      </group>
     </Detailed>
   );
 }
+
+useGLTF.preload('/donuts.glb');

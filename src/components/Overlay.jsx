@@ -6,7 +6,7 @@ export default function Overlay() {
     <Container>
       <Title>
         <h1>DONUT <br />DELIRIUM —</h1>
-        <p>Sprinkle your day with sugary delight. Donut dreams come true! ⎯</p>
+        <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! ⎯</p>
       </Title>
       <Hamburger><div /><div /><div /></Hamburger>
       <Description>

@@ -44,7 +44,7 @@ export default function Donut({ index, pZ, speed, rng }) {
   return (
     <>
       <Detailed ref={ref} distances={[0, 65, 80]}>
-        <group scale={3}>
+        <group scale={2}>
           {obj ? (
             <mesh geometry={obj.geometry} material={obj.material} />
           ) : (

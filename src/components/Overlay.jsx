@@ -89,9 +89,9 @@ const Sketch = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0) rotate(0deg);
-    width: 75%;
-    height: 75%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 50%;
+    height: 50%;
     & g.skin {
       cursor: pointer;
     }

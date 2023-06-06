@@ -1,6 +1,6 @@
-import Doughnuts from './Doughnuts';
-import DoughnutsCanvas from './DoughnutsCanvas';
+import Donuts from './Donuts';
+import DonutsCanvas from './DonutsCanvas';
 import Background from './Background';
 import Overlay from './Overlay';
 
-export { Doughnuts, DoughnutsCanvas, Background, Overlay };
+export { Donuts, DonutsCanvas, Background, Overlay };

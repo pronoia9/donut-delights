@@ -1,12 +1,12 @@
 import GlobalStyles from './styles/GlobalStyles';
 
-import { DoughnutsCanvas, GradientBackground, Overlay } from './components';
+import { DoughnutsCanvas, Background, Overlay } from './components';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <GradientBackground />
+      <Background />
       <DoughnutsCanvas />
       <Overlay />
     </>

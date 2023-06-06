@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import { inter } from './Inter';
 
 const GlobalStyles = createGlobalStyle`
-  ${inter}
-  
   @font-face {
     font-family: 'Ayer Poster';
     src: local('Ayer Poster Medium'), local('Ayer-Poster-Medium'), url('/AyerPoster-Medium.woff2') format('woff2'),

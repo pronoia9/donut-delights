@@ -12,8 +12,6 @@ export default function Donut({ index, pZ, speed, rng }) {
   let group = Object.values(nodes).filter((n) => n.isGroup && n.name !== 'Scene')[0],
     obj = null;
   if (!group) obj = Object.values(nodes).filter((n) => n.isMesh)[0];
-  if (group) console.log(`group`, group);
-  if (obj) console.log(`obj`, obj);
 
   // Local component state, it is safe to mutate because it's fixed data
   const [data] = useState({

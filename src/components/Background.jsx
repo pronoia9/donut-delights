@@ -1,30 +1,9 @@
-// The MIT License (MIT)
-
-// Copyright (c) 2023 Mario Klingemann (https://codepen.io/quasimondo/pen/AZedgK)
-
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 export default function Background() {
-  const gradientRef = useRef(null), interval = useRef();
+  const gradientRef = useRef(null),
+    interval = useRef();
 
   const colors = [
     [62, 35, 255],
@@ -60,8 +39,8 @@ export default function Background() {
     const b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
     const color2 = `rgb(${r2},${g2},${b2})`;
 
-    gradientElement.style.background = `-webkit-gradient(linear, left top, right top, from(${color1}), to(${color2}))`;
-    gradientElement.style.background = `-moz-linear-gradient(left, ${color1} 0%, ${color2} 100%)`;
+    gradientElement.style.background = `-webkit-gradient(linear, left bottom, left top, from(${color1}), to(${color2}))`;
+    gradientElement.style.background = `-moz-linear-gradient(top, ${color1} 0%, ${color2} 100%)`;
 
     step += gradientSpeed;
     if (step >= 1) {
@@ -76,11 +55,13 @@ export default function Background() {
 
   useEffect(() => {
     interval.current = setInterval(updateGradient, 10);
-    return () => { clearInterval(interval.current); };
+    return () => {
+      clearInterval(interval.current);
+    };
   }, []);
 
   return <Bg ref={gradientRef} id='gradient' />;
-};
+}
 
 const Bg = styled.div`
   min-width: 100vw;

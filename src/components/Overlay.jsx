@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import DonutSketch from './DonutSketch';
 
 export default function Overlay() {
   return (
@@ -23,7 +24,9 @@ export default function Overlay() {
         Donuts are a treat,<br />
         A sugary, dreamy theme.<br />
       </Poem>
-      <Sketch>{/* <DoughnutSketch /> */}</Sketch>
+      <Sketch>
+        <DonutSketch />
+      </Sketch>
     </Container>
   );
 }
@@ -81,14 +84,16 @@ const Poem = styled.div`
   text-align: right;
 `;
 
-const Sketch = styled.svg`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0) rotate(0deg);
-  width: 75%;
-  height: 75%;
-  & g.skin {
-    cursor: pointer;
+const Sketch = styled.div`
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    width: 75%;
+    height: 75%;
+    & g.skin {
+      cursor: pointer;
+    }
   }
 `;

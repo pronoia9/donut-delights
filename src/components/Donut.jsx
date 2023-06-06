@@ -3,14 +3,17 @@ import { useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Detailed } from '@react-three/drei';
 
-export default function Donut({ index, pZ, speed }) {
+export default function Donut({ index, pZ, speed, rng }) {
   const ref = useRef(); // useThree gives you access to the R3F state model
   const { viewport, camera } = useThree(); // getCurrentViewport is a helper that calculates the size of the viewport
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -pZ]);
-  const { nodes, materials } = useGLTF('/donuts.glb'); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
+  const { nodes, materials } = useGLTF(`donut${rng}.glb`); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
   // By the time we're here the model is loaded, this is possible through React suspense
-  const groups = Object.values(nodes).filter((n) => n?.isGroup && n.name !== 'Scene');
-  const rng = Math.floor(Math.random() * groups.length);
+  let group = Object.values(nodes).filter((n) => n.isGroup && n.name !== 'Scene')[0],
+    obj = null;
+  if (!group) obj = Object.values(nodes).filter((n) => n.isMesh)[0];
+  if (group) console.log(`group`, group);
+  if (obj) console.log(`obj`, obj);
 
   // Local component state, it is safe to mutate because it's fixed data
   const [data] = useState({
@@ -22,7 +25,7 @@ export default function Donut({ index, pZ, speed }) {
     rZ: Math.random() * Math.PI,
   });
 
-  // useFrame executes 60 times per second
+  // // useFrame executes 60 times per second
   useFrame((state, delta) => {
     // Make the X position responsive, slowly scroll objects up at the Y, distribute it along the Z
     // Delta is the time between this frame and the previous, we can use it to be independent of the screens refresh rate
@@ -41,13 +44,21 @@ export default function Donut({ index, pZ, speed }) {
   // Using drei's detailed is a nice trick to reduce the vertex count because
   // Don't need high resolution for objects in the distance. The model contains 3 decimated meshes
   return (
-    <Detailed ref={ref} distances={[0, 65, 80]}>
-      <group scale={0.5}>
-        {groups[rng].children.map((c) => (
-          <mesh scale={4} geometry={c.geometry} material={c.material} />
-        ))}
-      </group>
-    </Detailed>
+    <>
+      <Detailed ref={ref} distances={[0, 65, 80]}>
+        <group scale={3}>
+          {obj ? (
+            <mesh geometry={obj.geometry} material={obj.material} />
+          ) : (
+            <>
+              {group.children.map((c) => (
+                <mesh geometry={c.geometry} material={c.material} />
+              ))}
+            </>
+          )}
+        </group>
+      </Detailed>
+    </>
   );
 }
 

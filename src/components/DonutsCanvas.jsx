@@ -1,10 +1,11 @@
 import { Canvas } from '@react-three/fiber';
-import { Environment } from '@react-three/drei';
+import { Environment, useGLTF } from '@react-three/drei';
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
 
 import { Donut } from './';
 
 export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+  console.log(useGLTF('/donut1.glb'));
   return (
     // No need for antialias (faster), dpr clamps the resolution to 1.5 (also faster than full resolution)
     <Canvas gl={{ antialias: false }} camera={{ position: [0, 0, 10], fov: 20, near: 0.01, far: depth + 15 }} dpr={[1, 1.5]}>
@@ -13,7 +14,7 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
 
       {/* Objects */}
       {Array.from({ length: count }, (_, i) => (
-        <Donut key={i} index={i} pZ={Math.round(easing(i / count) * depth)} speed={speed} />
+        <Donut key={i} index={i} pZ={Math.round(easing(i / count) * depth)} speed={speed} rng={Math.floor(Math.random() * 12) + 1} />
       ))}
 
       <Environment files={'venice_sunset_1k.hdr'} />

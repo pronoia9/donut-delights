@@ -7,7 +7,7 @@ export default function Donut({ index, pZ, speed }) {
   const ref = useRef(); // useThree gives you access to the R3F state model
   const { viewport, camera } = useThree(); // getCurrentViewport is a helper that calculates the size of the viewport
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -pZ]);
-  const { nodes, materials } = useGLTF('/donuts-transformed.glb'); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
+  const { nodes, materials } = useGLTF('/donuts.glb'); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
   // By the time we're here the model is loaded, this is possible through React suspense
   const filtered = Object.values(nodes).filter((n) => n.isMesh);
 

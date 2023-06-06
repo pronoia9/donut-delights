@@ -64,7 +64,7 @@ export default function Background() {
 }
 
 const Bg = styled.div`
+  position: fixed;
   min-width: 100vw;
   min-height: 100vh;
-  z-index: -10;
 `;

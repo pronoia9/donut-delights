@@ -41,7 +41,7 @@ const Container = styled.div`
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     font-size: min(9vw, 7em);
-    line-height: 0.85em;
+    line-height: 1em;
   }
 `;
 

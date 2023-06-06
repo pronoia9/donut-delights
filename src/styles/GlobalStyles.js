@@ -1,14 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'Ayer Poster';
-    src: local('Ayer Poster Medium'), local('Ayer-Poster-Medium'), url('/AyerPoster-Medium.woff2') format('woff2'),
-      url('/AyerPoster-Medium.woff') format('woff'), url('/AyerPoster-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-
   * {
     box-sizing: border-box;
   }

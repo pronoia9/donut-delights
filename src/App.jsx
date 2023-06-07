@@ -61,5 +61,5 @@ const Speed = styled.div`
   font-size: 12px;
   transform: rotate(90deg) translate3d(50%, 0, 0);
   transform-origin: 100% 50%;
-  color: 'black';
+  color: ${({ theme }) => theme.font};
 `;

@@ -35,13 +35,13 @@ export default function Overlay({ theme, setTheme }) {
 }
 
 const Container = styled.div`
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'FFF Tusj', sans-serif;
   font-size: 16px;
-  
+
   & h1 {
     padding: 0;
     margin: 0 0 0.05em 0;
-    font-family: 'Pacifico', cursive;
+    font-family: 'FFF Tusj', cursive;
     font-weight: 400;
     font-size: min(9vw, 7em);
     line-height: 1em;

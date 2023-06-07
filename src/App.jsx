@@ -1,7 +1,7 @@
 import { Suspense, useState, useEffect } from 'react';
 import styled, { ThemeProvider, keyframes } from 'styled-components';
 
-import { DonutsCanvas, Background, Overlay } from './components';
+import { DonutsCanvas, Background, Overlay, Preloader } from './components';
 import GlobalStyles from './styles/GlobalStyles';
 import { darkTheme, lightTheme } from './styles/Themes';
 import { systemThemeChangeHandler } from './utils/utils';
@@ -10,6 +10,7 @@ function App() {
   // STATE
   const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   const [speed, setSpeed] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
   useEffect(() => {
@@ -18,9 +19,13 @@ function App() {
     return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
   }, []);
 
+  // DISABLE LOADING AFTER 7s
+  useEffect(() => { setTimeout(() => { setLoading(false); }, 8500); }, []);
+
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
+      {loading && <Preloader />}
       <Background />
       <Suspense fallback={null}>
         <DonutsCanvas speed={speed} />

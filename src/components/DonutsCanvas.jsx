@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { Environment } from '@react-three/drei';
+import { Environment, useGLTF } from '@react-three/drei';
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing';
 
 import { Donut } from './';
@@ -25,3 +25,16 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
     </Canvas>
   );
 }
+
+useGLTF.preload('/models/donut1.glb');
+useGLTF.preload('/models/donut2.glb');
+useGLTF.preload('/models/donut3.glb');
+useGLTF.preload('/models/donut4.glb');
+useGLTF.preload('/models/donut5.glb');
+useGLTF.preload('/models/donut6.glb');
+useGLTF.preload('/models/donut7.glb');
+useGLTF.preload('/models/donut8.glb');
+useGLTF.preload('/models/donut9.glb');
+useGLTF.preload('/models/donut10.glb');
+useGLTF.preload('/models/donut11.glb');
+useGLTF.preload('/models/donut12.glb');

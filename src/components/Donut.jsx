@@ -66,5 +66,3 @@ export default function Donut({ index, pZ, speed, rng }) {
     </>
   );
 }
-
-useGLTF.preload('/donuts.glb');

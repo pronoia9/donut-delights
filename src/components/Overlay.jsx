@@ -6,26 +6,33 @@ export default function Overlay({ theme, setTheme }) {
   return (
     <Container>
       <Title>
-        <h1>FROSTY <br />FUN —</h1>
-        <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! -</p>
+        <h1>
+          FROSTY <br />
+          FUN —
+        </h1>
+        <p>
+          Sprinkle your day with sugary delight.
+          <br />
+          Donut dreams come true! -
+        </p>
       </Title>
       <Hamburger>
         <ThemeButton theme={theme} setTheme={setTheme} />
       </Hamburger>
       <Description>
-        Indulge in the hole-y goodness<br />
-        Where every bite is pure delight
+        <p>Indulge in the hole-y goodness</p>
+        <p>Where every bite is pure delight</p>
       </Description>
       <Poem>
-        Doughy rings of joy,<br />
-        Sprinkles dancing with delight,<br />
-        Donuts are a snack,<br />
-        That'll keep you up all night.<br /><br />
-              
-        Dip them in chocolate,<br />
-        Or glaze them with sweet cream,<br />
-        Donuts are a treat,<br />
-        A sugary, dreamy theme.<br />
+        <p>Doughy rings of joy,</p>
+        <p>Sprinkles dancing with delight,</p>
+        <p>Donuts are a snack,</p>
+        <p>That'll keep you up all night.</p>
+        <br />
+        <p>Dip them in chocolate,</p>
+        <p>Or glaze them with sweet cream,</p>
+        <p>Donuts are a treat,</p>
+        <p>A sugary, dreamy theme.</p>
       </Poem>
       <Sketch>
         <DonutSketch />
@@ -37,7 +44,7 @@ export default function Overlay({ theme, setTheme }) {
 const Container = styled.div`
   font-family: 'Aaargh', sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 0.35rem;
 `;
 
 const Title = styled.div`
@@ -47,6 +54,7 @@ const Title = styled.div`
   font-family: 'Mathilde', cursive;
   font-size: 3rem;
   font-weight: 500;
+  line-height: 2.5rem;
 
   & h1 {
     padding: 0;
@@ -79,7 +87,6 @@ const Poem = styled.div`
   right: 7.5vw;
   width: 35ch;
   max-width: 40%;
-  line-height: 1em;
   letter-spacing: -0.01em;
   text-align: right;
 `;

@@ -11,7 +11,11 @@ const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Mathilde';
     src: url('/fonts/mathilde.otf');
-    src: url('/fonts/mathilde.otf') format('otf'),
+  }
+
+  @font-face {
+    font-family: 'Aaargh';
+    src: url('/fonts/Aaargh.ttf');
   }
 
   * {

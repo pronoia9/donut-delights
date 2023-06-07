@@ -7,7 +7,7 @@ export default function Overlay({ theme, setTheme }) {
     <Container>
       <Title>
         <h1>FROSTY <br />FUN —</h1>
-        <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! ⎯</p>
+        <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! -</p>
       </Title>
       <Hamburger>
         <ThemeButton theme={theme} setTheme={setTheme} />
@@ -35,8 +35,17 @@ export default function Overlay({ theme, setTheme }) {
 }
 
 const Container = styled.div`
+  font-family: 'Aaargh', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+`;
+
+const Title = styled.div`
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
   font-family: 'Mathilde', cursive;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 500;
 
   & h1 {
@@ -47,12 +56,6 @@ const Container = styled.div`
     font-size: min(9vw, 7em);
     line-height: 1em;
   }
-`;
-
-const Title = styled.div`
-  position: absolute;
-  top: 5vw;
-  left: 5vw;
 `;
 
 const Hamburger = styled.div`

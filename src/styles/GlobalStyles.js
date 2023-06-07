@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.font};
     transition: 0.5s ease-in-out;
+    overflow: hidden;
   }
 
   path {

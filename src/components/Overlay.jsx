@@ -20,19 +20,19 @@ export default function Overlay({ theme, setTheme }) {
         <ThemeButton theme={theme} setTheme={setTheme} />
       </Hamburger>
       <Description>
-        <p>Indulge in the hole-y goodness</p>
-        <p>Where every bite is pure delight</p>
+        Indulge in the hole-y goodness<br />
+        Where every bite is pure delight
       </Description>
       <Poem>
-        <p>Doughy rings of joy,</p>
-        <p>Sprinkles dancing with delight,</p>
-        <p>Donuts are a snack,</p>
-        <p>That'll keep you up all night.</p>
-        <br />
-        <p>Dip them in chocolate,</p>
-        <p>Or glaze them with sweet cream,</p>
-        <p>Donuts are a treat,</p>
-        <p>A sugary, dreamy theme.</p>
+        Doughy rings of joy,<br />
+        Sprinkles dancing with delight,<br />
+        Donuts are a snack,<br />
+        That'll keep you up all night.<br /><br />
+              
+        Dip them in chocolate,<br />
+        Or glaze them with sweet cream,<br />
+        Donuts are a treat,<br />
+        A sugary, dreamy theme.<br />
       </Poem>
       <Sketch>
         <DonutSketch />
@@ -44,7 +44,11 @@ export default function Overlay({ theme, setTheme }) {
 const Container = styled.div`
   font-family: 'Aaargh', sans-serif;
   font-size: 1rem;
-  line-height: 0.35rem;
+  line-height: 1.5rem;
+
+  @media (max-width: 500px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Title = styled.div`
@@ -63,6 +67,11 @@ const Title = styled.div`
     font-weight: 400;
     font-size: min(9vw, 7em);
     line-height: 1em;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 2.25rem;
+    line-height: 1.75rem;
   }
 `;
 

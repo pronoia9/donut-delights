@@ -12,19 +12,17 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.font};
   }
 
-  body {
-    /* background: #ffd863; */
-  }
-
-  a {
-    color: black;
+  path {
+    fill: ${({ theme }) => theme.font};
   }
 
   input[type='range'] {
     display: block;
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background: black;

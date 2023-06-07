@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 import DonutSketch from './DonutSketch';
+import ThemeButton from './ThemeButton';
 
-export default function Overlay() {
+export default function Overlay({ theme, setTheme }) {
   return (
     <Container>
       <Title>
         <h1>DONUT <br />DELIRIUM —</h1>
         <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! ⎯</p>
       </Title>
-      <Hamburger><div /><div /><div /></Hamburger>
+      <Hamburger>
+        <ThemeButton theme={theme} setTheme={setTheme} />
+      </Hamburger>
       <Description>
         Indulge in the hole-y goodness<br />
         Where every bite is pure delight

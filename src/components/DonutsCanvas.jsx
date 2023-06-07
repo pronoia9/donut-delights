@@ -20,7 +20,7 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
 
       {/* Effects */}
       <EffectComposer multisampling={0}>
-        <DepthOfField target={[0, 0, 60]} focalLength={0.4} bokehScale={7} height={700} />
+        <DepthOfField target={[0, 0, 60]} focalLength={0.4} bokehScale={10} height={700} />
       </EffectComposer>
     </Canvas>
   );

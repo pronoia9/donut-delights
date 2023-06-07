@@ -1,20 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'FFF Tusj';
-    src: url('/fonts/FFF_Tusj.ttf');
-  }
-
-  @font-face {
-    font-family: 'Mathilde';
-    src: url('/fonts/mathilde.otf');
-  }
-
-  @font-face {
-    font-family: 'Aaargh';
-    src: url('/fonts/Aaargh.ttf');
-  }
+  @font-face { font-family: 'FFF Tusj'; src: url('/fonts/FFF_Tusj.ttf'); }
+  @font-face { font-family: 'Mathilde'; src: url('/fonts/mathilde.otf'); }
+  @font-face { font-family: 'Aaargh'; src: url('/fonts/Aaargh.ttf'); }
 
   * {
     box-sizing: border-box;

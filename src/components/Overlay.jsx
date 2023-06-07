@@ -57,16 +57,8 @@ const Title = styled.div`
 const Hamburger = styled.div`
   position: absolute;
   display: flex;
-  flex-direction: column;
   top: 5vw;
   right: 5vw;
-  & > div {
-    position: relative;
-    width: 24px;
-    height: 2px;
-    background: #252525;
-    margin-bottom: 6px;
-  }
 `;
 
 const Description = styled.div`

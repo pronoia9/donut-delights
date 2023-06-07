@@ -4,8 +4,6 @@ const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'FFF Tusj';
     src: url('/fonts/FFF_Tusj.ttf');
-    src: url('/fonts/FFF_Tusj.woff') format('woff'),
-         url('/fonts/FFF_Tusj.ttf') format('truetype');
   }
 
   @font-face {

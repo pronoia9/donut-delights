@@ -9,7 +9,7 @@ export default function Donut({ index, pZ, speed, rng }) {
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -pZ]);
   const [group, setGroup] = useState([]);
   const [obj, setObj] = useState(null);
-  const { nodes, materials } = useGLTF(`donut${rng}.glb`); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
+  const { nodes, materials } = useGLTF(`models/donut${rng}.glb`); // useGLTF is an abstraction around R3F's useLoader(GLTFLoader, url). It can automatically handle draco and meshopt-compressed assets without you having to worry about binaries and such ...
   // By the time we're here the model is loaded, this is possible through React suspense
 
   useEffect(() => {

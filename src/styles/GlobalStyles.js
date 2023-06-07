@@ -8,6 +8,12 @@ const GlobalStyles = createGlobalStyle`
          url('/fonts/FFF_Tusj.ttf') format('truetype');
   }
 
+  @font-face {
+    font-family: 'Mathilde';
+    src: url('/fonts/mathilde.otf');
+    src: url('/fonts/mathilde.otf') format('otf'),
+  }
+
   * {
     box-sizing: border-box;
   }

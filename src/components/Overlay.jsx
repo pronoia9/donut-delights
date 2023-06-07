@@ -6,7 +6,7 @@ export default function Overlay({ theme, setTheme }) {
   return (
     <Container>
       <Title>
-        <h1>DONUT <br />DELIRIUM —</h1>
+        <h1>FROSTY <br />FUN —</h1>
         <p>Sprinkle your day with sugary delight.<br />Donut dreams come true! ⎯</p>
       </Title>
       <Hamburger>
@@ -35,13 +35,14 @@ export default function Overlay({ theme, setTheme }) {
 }
 
 const Container = styled.div`
-  font-family: 'FFF Tusj', sans-serif;
-  font-size: 16px;
+  font-family: 'Mathilde', cursive;
+  font-size: 2.5rem;
+  font-weight: 500;
 
   & h1 {
     padding: 0;
     margin: 0 0 0.05em 0;
-    font-family: 'FFF Tusj', cursive;
+    font-family: 'FFF Tusj', sans-serif;
     font-weight: 400;
     font-size: min(9vw, 7em);
     line-height: 1em;
@@ -72,7 +73,7 @@ const Description = styled.div`
 const Poem = styled.div`
   position: absolute;
   bottom: 5vw;
-  right: 5vw;
+  right: 7.5vw;
   width: 35ch;
   max-width: 40%;
   line-height: 1em;

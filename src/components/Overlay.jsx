@@ -44,10 +44,11 @@ export default function Overlay({ theme, setTheme }) {
 const Container = styled.div`
   font-family: 'Aaargh', sans-serif;
   font-size: 1rem;
-  line-height: 1.25rem;
-
+  line-height: 1.5rem;
+  
   @media (max-width: 500px) {
     font-size: 0.85rem;
+    line-height: 1.1rem;
   }
 `;
 

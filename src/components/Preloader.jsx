@@ -163,7 +163,7 @@ const fadeOut = keyframes`
 const Container = styled.div`
   font-family: 'Aaargh', sans-serif;
   background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.font};
+  color: ${({ theme }) => theme.loading};
   position: fixed;
   top: 0;
   left: 0;

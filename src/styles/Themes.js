@@ -1,13 +1,11 @@
 export const darkTheme = {
   font: '#000',
-  font2: '#fff',
   background: '#000',
-  background2: '#444',
+  button: 'https://i.ibb.co/FxzBYR9/night.png',
 };
 
 export const lightTheme = {
-  font: '#fff',
-  font2: '#000',
+  font: '#000',
   background: '#fff',
-  background2: '#eee',
+  button: 'https://i.ibb.co/7JfqXxB/sunny.png',
 };

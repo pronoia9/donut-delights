@@ -1,7 +1,7 @@
 import { Suspense, useState, useEffect } from 'react';
 import styled, { ThemeProvider, keyframes } from 'styled-components';
 
-import { DonutsCanvas, Background, Overlay, Preloader } from './components';
+import { DonutsCanvas, Overlay, Preloader } from './components';
 import GlobalStyles from './styles/GlobalStyles';
 import { darkTheme, lightTheme } from './styles/Themes';
 import { systemThemeChangeHandler } from './utils/utils';
@@ -26,9 +26,8 @@ function App() {
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
       {loading && <Preloader />}
-      <Background />
       <Suspense fallback={null}>
-        <DonutsCanvas speed={speed} />
+        <DonutsCanvas speed={speed} theme={theme} />
         <FadeIn />
       </Suspense>
       <Overlay theme={theme} setTheme={setTheme} />

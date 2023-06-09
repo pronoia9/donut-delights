@@ -20,7 +20,7 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
         <Donut key={i} index={i} pZ={Math.round(easing(i / count) * depth)} speed={speed} rng={Math.floor(Math.random() * 12) + 1} />
       ))}
 
-      {isDarkTheme(theme) ? <Environment preset='night' /> : <Environment files={'venice_sunset_1k.hdr'} />}
+      {isDarkTheme(theme) ? <Environment files={'images/moonless_golf_1k.hdr'} /> : <Environment files={'images/venice_sunset_1k.hdr'} />}
 
       {/* Effects */}
       <EffectComposer multisampling={0}>

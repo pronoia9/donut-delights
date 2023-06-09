@@ -4,7 +4,7 @@ import styled, { ThemeProvider, keyframes } from 'styled-components';
 import { DonutsCanvas, Overlay, Preloader } from './components';
 import GlobalStyles from './styles/GlobalStyles';
 import { darkTheme, lightTheme } from './styles/Themes';
-import { systemThemeChangeHandler } from './utils/utils';
+import { isDarkTheme, systemThemeChangeHandler } from './utils/utils';
 
 function App() {
   // STATE
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => { setTimeout(() => { setLoading(false); }, 8500); }, []);
 
   return (
-    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+    <ThemeProvider theme={isDarkTheme(theme) ? darkTheme : lightTheme}>
       <GlobalStyles />
       {loading && <Preloader />}
       <Suspense fallback={null}>

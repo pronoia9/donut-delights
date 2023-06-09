@@ -13,14 +13,14 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
       <DonutsBackground theme={theme} depth={depth} />
 
       {/* Lights */}
-      {!isDarkTheme(theme) && <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color='orange' />}
+      <spotLight position={[10, 20, 10]} penumbra={1} intensity={isDarkTheme(theme) ? 3 : 10} color='pink' />
 
       {/* Objects */}
       {Array.from({ length: count }, (_, i) => (
         <Donut key={i} index={i} pZ={Math.round(easing(i / count) * depth)} speed={speed} rng={Math.floor(Math.random() * 12) + 1} />
       ))}
 
-      <Environment files={'venice_sunset_1k.hdr'} />
+      {isDarkTheme(theme) ? <Environment preset='night' /> : <Environment files={'venice_sunset_1k.hdr'} />}
 
       {/* Effects */}
       <EffectComposer multisampling={0}>

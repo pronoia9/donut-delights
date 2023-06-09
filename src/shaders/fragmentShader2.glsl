@@ -215,7 +215,7 @@ vec3 hsv2rgb(vec3 c) {
 }
 
 void main() {
-  vec2 coord = scale * (gl_FragCoord.xy - uResolution.xy) / min(uResolution.y, uResolution.x);
+  // vec2 coord = scale * (gl_FragCoord.xy - uResolution.xy) / min(uResolution.y, uResolution.x);
 
   float len = createLen();
   float len2 = createLen2(10.0, 10.0, 8.0, 20.0);
@@ -223,8 +223,9 @@ void main() {
   float len4 = createLen4(5.0, 20.0, 5.0, 40.0);
 
   vec3 blue = uColor1 + cos(len) * 0.25 + 0.25;
-
   vec3 turquoise = uColor2 + cos(len2) * 0.5 + 0.75;
+  vec3 pink = uColor3 + cos(len3) * 0.5 + 0.75;
+  vec3 peach = uColor4 + cos(len4) * 0.75 + 0.95;
 
   /*
   vec2 pos = vec2(sin(uTime * 0.01 * sin(uTime * 0.001)), cos(uTime * 0.002));
@@ -236,13 +237,8 @@ void main() {
   turquoise += createCircle(pos2, uColor2, radius2, 0.75);
   */
 
-  vec3 pink = uColor3 + cos(len3) * 0.5 + 0.75;
-  vec3 peach = uColor4 + cos(len4) * 0.75 + 0.95;
-
   float pinkValue = min(1.0, max(0.0, 1.2 - (pink[0] / 1.2)));
-
   float peachValue = min(1.0, max(0.0, 1.5 - (peach[0] / 1.2)));
-
   float turquoiseValue = min(1.0, max(0.0, 1.5 - (turquoise[2] / 1.1)));
 
   vec3 blend = blue;
@@ -252,23 +248,28 @@ void main() {
 
   //blend += turquoise;
   //blend += torquoise;
-  //blend = blendDarken(blend, pink);
-  //blend = blendLinearBurn(blend, peach);
+  // blend = blendDarken(blend, blue);
+  // blend = blendDarken(blend, turquoise);
+  // blend = blendDarken(blend, pink);
+  // blend = blendDarken(blend, peach);
+  // blend = blendLinearBurn(blend, peach);
 
   vec3 lightercolor = blendLinearBurn(blend, peach);
   blend = mix(blend, lightercolor, max(1.0 - lightercolor[0], 0.0));
-
   blend = blendOverlay(blend, vec3(0.0, 0.0, 0.0));
 
-  vec3 color = blend;
+  blend = blendDarken(blend, blue);
+  // blend = blendDarken(blend, turquoise);
+  // blend = blendDarken(blend, pink);
+  // blend = blendDarken(blend, peach);
 
-  float r = color[0];
-  float g = color[1];
-  float b = color[2];
+  // vec3 color = blend;
+  // float r = color[0];
+  // float g = color[1];
+  // float b = color[2];
+  // vec3 hsb = rgb2hsv(vec3(r, g, b));
+  // hsb[1] -= rand(coord) * 0.15;
+  // vec3 rgb = hsv2rgb(hsb);
 
-  vec3 hsb = rgb2hsv(vec3(r, g, b));
-  hsb[1] -= rand(coord) * 0.15;
-  vec3 rgb = hsv2rgb(hsb);
-
-  gl_FragColor = vec4(rgb, 1.0);
+  gl_FragColor = vec4(blend, 1.0);
 }

@@ -248,7 +248,7 @@ void main() {
 
   //blend += turquoise;
   //blend += torquoise;
-  // blend = blendDarken(blend, blue);
+  blend = blendDarken(blend, blue);
   // blend = blendDarken(blend, turquoise);
   // blend = blendDarken(blend, pink);
   // blend = blendDarken(blend, peach);
@@ -258,7 +258,7 @@ void main() {
   blend = mix(blend, lightercolor, max(1.0 - lightercolor[0], 0.0));
   blend = blendOverlay(blend, vec3(0.0, 0.0, 0.0));
 
-  blend = blendDarken(blend, blue);
+  // blend = blendDarken(blend, blue);
   // blend = blendDarken(blend, turquoise);
   // blend = blendDarken(blend, pink);
   // blend = blendDarken(blend, peach);

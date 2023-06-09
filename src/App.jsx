@@ -30,10 +30,7 @@ function App() {
         <DonutsCanvas speed={speed} theme={theme} />
         <FadeIn />
       </Suspense>
-      <Overlay theme={theme} setTheme={setTheme} />
-      <Speed>
-        <input type='range' min='0' max='10' value={speed} step='1' onChange={(e) => setSpeed(e.target.value)} />
-      </Speed>
+      <Overlay theme={theme} setTheme={setTheme} speed={speed} setSpeed={setSpeed} />
     </ThemeProvider>
   );
 }
@@ -53,17 +50,4 @@ const FadeIn = styled.div`
   height: 100%;
   pointer-events: none;
   animation: ${fade} 4s normal forwards ease-in-out;
-`;
-
-const Speed = styled.div`
-  position: absolute;
-  bottom: 50%;
-  right: 5vw;
-  font-weight: 400;
-  line-height: 1em;
-  letter-spacing: -0.01em;
-  font-size: 12px;
-  transform: rotate(90deg) translate3d(50%, 0, 0);
-  transform-origin: 100% 50%;
-  color: ${({ theme }) => theme.font};
 `;

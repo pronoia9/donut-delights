@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DonutSketch from './DonutSketch';
 import ThemeButton from './ThemeButton';
 
-export default function Overlay({ theme, setTheme }) {
+export default function Overlay({ theme, setTheme, speed, setSpeed }) {
   return (
     <Container>
       <Title>
@@ -16,13 +16,24 @@ export default function Overlay({ theme, setTheme }) {
           Donut dreams come true! -
         </p>
       </Title>
-      <Hamburger>
-        <ThemeButton theme={theme} setTheme={setTheme} />
-      </Hamburger>
+
       <Description>
         Indulge in the hole-y goodness<br />
         Where every bite is pure delight
       </Description>
+
+      <Sketch>
+        <DonutSketch />
+      </Sketch>
+
+      <Theme>
+        <ThemeButton theme={theme} setTheme={setTheme} />
+      </Theme>
+
+      <Speed>
+        <input type='range' min='0' max='10' value={speed} step='1' onChange={(e) => setSpeed(e.target.value)} />
+      </Speed>
+
       <Poem>
         Doughy rings of joy,<br />
         Sprinkles dancing with delight,<br />
@@ -33,10 +44,7 @@ export default function Overlay({ theme, setTheme }) {
         Or glaze them with sweet cream,<br />
         Donuts are a treat,<br />
         A sugary, dreamy theme.<br />
-      </Poem>
-      <Sketch>
-        <DonutSketch />
-      </Sketch>
+      </Poem>      
     </Container>
   );
 }
@@ -76,7 +84,7 @@ const Title = styled.div`
   }
 `;
 
-const Hamburger = styled.div`
+const Theme = styled.div`
   position: absolute;
   display: flex;
   top: 5vw;
@@ -110,4 +118,17 @@ const Sketch = styled.div`
     width: 40%;
     height: 40%;
   }
+`;
+
+const Speed = styled.div`
+  position: absolute;
+  bottom: 50%;
+  right: 5vw;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: -0.01em;
+  font-size: 12px;
+  transform: rotate(90deg) translate3d(50%, 0, 0);
+  transform-origin: 100% 50%;
+  color: ${({ theme }) => theme.font};
 `;

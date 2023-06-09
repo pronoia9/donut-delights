@@ -1,5 +1,5 @@
 export const darkTheme = {
-  font: '#000',
+  font: '#fff',
   loading: '#fff',
   background: '#000',
   button: 'https://i.ibb.co/FxzBYR9/night.png',

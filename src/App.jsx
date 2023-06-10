@@ -50,4 +50,5 @@ const FadeIn = styled.div`
   height: 100%;
   pointer-events: none;
   animation: ${fade} 4s normal forwards ease-in-out;
+  overflow: hidden;
 `;

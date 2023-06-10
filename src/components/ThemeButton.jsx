@@ -10,7 +10,7 @@ const Container = styled.div`
   right: -1.1vw;
   width: 34px;
   height: 34px;
-  background: ${({ theme }) => theme.font} url(${({ theme }) => theme.button}) no-repeat center;
+  background: ${({ theme }) => theme.background} url(${({ theme }) => theme.button}) no-repeat center;
   border-radius: 20%;
   cursor: pointer;
   transition: background 0.5s ease-in-out;

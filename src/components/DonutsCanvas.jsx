@@ -14,9 +14,9 @@ export default function DonutsCanvas({ speed = 1, count = 80, depth = 80, easing
 
       {/* Lights */}
       {isDarkTheme(theme) ? (
-        <spotLight position={[10, 20, 10]} penumbra={1} intensity={3} color='indigo' />
+        <spotLight position={[-10, -20, 10]} penumbra={1} intensity={5} color='#9F73AB' />
       ) : (
-        <spotLight position={[10, 20, 10]} penumbra={1} intensity={10} color='pink' />
+        <spotLight position={[10, 20, 10]} penumbra={1} intensity={10} color='#E9A6A6' />
       )}
 
       {/* Objects */}

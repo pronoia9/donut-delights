@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 34px;
   height: 34px;
   background: ${({ theme }) => theme.background} url(${({ theme }) => theme.button}) no-repeat center;
-  border-radius: 20%;
+  border-radius: 50%;
   cursor: pointer;
   transition: background 0.5s ease-in-out;
   z-index: 99;

@@ -8,16 +8,16 @@ import { isDarkTheme, systemThemeChangeHandler } from './utils/utils';
 
 function App() {
   // STATE
-  const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const [theme, setTheme] = useState('light'); // window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 
   const [speed, setSpeed] = useState(1);
   const [loading, setLoading] = useState(true);
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
-  useEffect(() => {
-    const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
-    systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
-    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
-  }, []);
+  // useEffect(() => {
+  //   const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
+  //   systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
+  //   return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
+  // }, []);
 
   // DISABLE LOADING AFTER 7s
   useEffect(() => { setTimeout(() => { setLoading(false); }, 8500); }, []);

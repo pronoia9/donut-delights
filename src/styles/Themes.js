@@ -3,7 +3,7 @@ export const darkTheme = {
   loading: '#fff',
   background: '#000',
   themeBackground: '#27374D75',
-  themeIcon: '/images/night.png',
+  themeIcon: '/images/moon.svg',
 };
 
 export const lightTheme = {
@@ -11,5 +11,5 @@ export const lightTheme = {
   loading: '#000',
   background: '#fff',
   themeBackground: '#FFE5CA75',
-  themeIcon: '/images/sunny.png',
+  themeIcon: '/images/sun.svg',
 };
